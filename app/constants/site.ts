@@ -7,6 +7,6 @@ export const siteConfig = {
   hours: "09:00 ~ 20:00",
   services: "에어컨 · 세탁기 · 건조기 · 제습기 · 청소기 · 공기청정기",
 
-  blogUrl: "https://blog.naver.com/여기에_블로그아이디",
-  instagramUrl: "https://www.instagram.com/여기에_인스타아이디",
+  blogUrl: "https://blog.naver.com/thecares_",
+  instagramUrl: "https://www.instagram.com/Born_cares",
 };

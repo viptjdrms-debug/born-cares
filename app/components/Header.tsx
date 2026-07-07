@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
+import { SiNaver } from "react-icons/si";
 import { siteConfig } from "../constants/site";
 
 const menus = [
@@ -33,10 +35,10 @@ export default function Header() {
 
   return (
     <header
-  className={`fixed left-0 top-0 z-[999] w-full border-b border-slate-200 bg-[#fafafa] transition-all duration-300 ${
-    scrolled ? "shadow-md" : "shadow-sm"
-  }`}
->
+      className={`fixed left-0 top-0 z-[999] w-full border-b border-slate-200 bg-[#fafafa] transition-all duration-300 ${
+        scrolled ? "shadow-md" : "shadow-sm"
+      }`}
+    >
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-300 lg:px-6 ${
           scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
@@ -45,17 +47,17 @@ export default function Header() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="relative block h-11 w-[140px] shrink-0 lg:h-12 lg:w-[155px]"
+          className="relative block h-14 w-[180px] shrink-0 lg:h-16 lg:w-[210px]"
           aria-label="Born Cares 홈으로 이동"
->
-  <Image
-    src="/images/logo/born-cares-logo.png"
-    alt="Born Cares"
-    fill
-    priority
-    className="object-contain"
-  />
-</Link>
+        >
+          <Image
+            src="/images/logo/born-cares-logo.png"
+            alt="Born Cares"
+            fill
+            priority
+            className="object-contain"
+          />
+        </Link>
 
         <nav className="hidden items-center gap-10 font-semibold text-slate-800 lg:flex">
           {menus.map((menu) => (
@@ -69,12 +71,34 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link
-          href="/#contact"
-          className="hidden rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-600 lg:block"
-        >
-          무료견적
-        </Link>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={siteConfig.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="인스타그램 바로가기"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-cyan-400 hover:bg-cyan-50 hover:text-cyan-500"
+          >
+            <FaInstagram size={19} />
+          </a>
+
+          <a
+            href={siteConfig.blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="블로그 바로가기"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-cyan-400 hover:bg-cyan-50 hover:text-cyan-500"
+          >
+            <SiNaver size={19} />
+          </a>
+
+          <Link
+            href="/#contact"
+            className="rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-600"
+          >
+            무료견적
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -97,6 +121,28 @@ export default function Header() {
           </nav>
 
           <div className="mt-6 grid grid-cols-2 gap-3 border-t border-slate-100 pt-6">
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-slate-900"
+            >
+              <FaInstagram size={18} />
+              인스타
+            </a>
+
+            <a
+              href={siteConfig.blogUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-slate-900"
+            >
+              <SiNaver size={18} />
+              블로그
+            </a>
+
             <a
               href={siteConfig.phoneHref}
               onClick={closeMenu}
