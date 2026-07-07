@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { siteConfig } from "../constants/site";
@@ -32,12 +33,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-[999] w-full border-b transition-all duration-300 ${
-        scrolled
-          ? "border-slate-200 bg-white/95 shadow-md backdrop-blur"
-          : "border-slate-200 bg-white/95 shadow-sm backdrop-blur"
-      }`}
-    >
+  className={`fixed left-0 top-0 z-[999] w-full border-b border-slate-200 bg-[#fafafa] transition-all duration-300 ${
+    scrolled ? "shadow-md" : "shadow-sm"
+  }`}
+>
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-300 lg:px-6 ${
           scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
@@ -46,10 +45,17 @@ export default function Header() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="text-2xl font-black text-slate-950 lg:text-3xl"
-        >
-          Born <span className="text-cyan-500">cares</span>
-        </Link>
+          className="relative block h-11 w-[140px] shrink-0 lg:h-12 lg:w-[155px]"
+          aria-label="Born Cares 홈으로 이동"
+>
+  <Image
+    src="/images/logo/born-cares-logo.png"
+    alt="Born Cares"
+    fill
+    priority
+    className="object-contain"
+  />
+</Link>
 
         <nav className="hidden items-center gap-10 font-semibold text-slate-800 lg:flex">
           {menus.map((menu) => (
