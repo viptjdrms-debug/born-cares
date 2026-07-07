@@ -20,7 +20,7 @@ export default function FloatingButton() {
           className="flex items-center justify-center gap-2 rounded-full bg-cyan-500 py-4 text-center font-bold text-white"
         >
           <MessageCircle size={18} />
-          카카오 상담
+          카카오톡 상담
         </a>
       </div>
     </div>

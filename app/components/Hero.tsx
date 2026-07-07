@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CheckCircle2, Phone } from "lucide-react";
+import { CheckCircle2, Phone, MessageCircle } from "lucide-react";
 import { siteConfig } from "../constants/site";
 
 export default function Hero() {
@@ -26,18 +26,22 @@ export default function Hero() {
 
             <p className="mt-5 max-w-xl leading-8 text-slate-300">
               에어컨, 세탁기, 건조기, 제습기, 청소기, 공기청정기까지
+              <br />
               제품별 구조에 맞춰 분해세척과 유지관리를 진행합니다.
             </p>
 
             <div className="mt-8 grid gap-3 text-sm font-semibold text-slate-200 sm:grid-cols-2">
-              {["제품별 맞춤 분해세척", "고급주택 · 병원 · 기업 대응", "서울 · 경기 북부 출장", "전화 · 카카오 빠른 상담"].map(
-                (item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-cyan-300" />
-                    {item}
-                  </div>
-                )
-              )}
+              {[
+                "제품별 맞춤 분해세척",
+                "고급주택 · 병원 · 기업 대응",
+                "서울 · 경기 북부 출장",
+                "전화 · 카카오톡 빠른 상담",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <CheckCircle2 size={18} className="text-cyan-300" />
+                  {item}
+                </div>
+              ))}
             </div>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -45,7 +49,7 @@ export default function Hero() {
                 href="#contact"
                 className="rounded-full bg-cyan-400 px-8 py-4 text-center font-black text-slate-950 transition hover:bg-cyan-300"
               >
-                무료 견적받기
+                무료 견적
               </a>
 
               <a
@@ -54,6 +58,16 @@ export default function Hero() {
               >
                 <Phone size={18} />
                 전화 상담
+              </a>
+
+              <a
+                href={siteConfig.kakaoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-full border border-yellow-300/70 bg-yellow-300 px-8 py-4 font-bold text-slate-950 transition hover:bg-yellow-200"
+              >
+                <MessageCircle size={18} />
+                카카오톡
               </a>
             </div>
           </div>
@@ -78,12 +92,14 @@ export default function Hero() {
                     누적 작업
                   </p>
                 </div>
+
                 <div>
                   <p className="text-2xl font-black text-cyan-500">99%</p>
                   <p className="mt-1 text-xs font-bold text-slate-500">
                     고객 만족
                   </p>
                 </div>
+
                 <div>
                   <p className="text-2xl font-black text-cyan-500">6종</p>
                   <p className="mt-1 text-xs font-bold text-slate-500">

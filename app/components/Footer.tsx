@@ -39,8 +39,8 @@ export default function Footer() {
             </div>
 
             <p>상호명 : {siteConfig.name}</p>
-            <p>대표자 : 입력 예정</p>
-            <p>사업자등록번호 : 입력 예정</p>
+            <p>대표자 : 송성근</p>
+            <p>사업자등록번호 : 139-12-73051</p>
           </div>
         </div>
 

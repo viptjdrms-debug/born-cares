@@ -43,7 +43,7 @@ export default function Contact() {
                 className="flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-6 py-4 font-black text-white"
               >
                 <MessageCircle size={18} />
-                카카오 상담
+                카카오톡 상담
               </a>
             </div>
           </div>
