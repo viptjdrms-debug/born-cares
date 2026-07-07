@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
-import { SiNaver } from "react-icons/si";
 import { siteConfig } from "../constants/site";
 
 const menus = [
@@ -15,6 +13,46 @@ const menus = [
   { name: "자주 묻는 질문", href: "/#faq" },
   { name: "예약문의", href: "/#contact" },
 ];
+
+function InstagramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+function NaverBlogIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="3" y="4" width="18" height="16" rx="3" fill="currentColor" />
+      <path
+        d="M7.2 8.2h2.2l4.2 5.4V8.2h3.2v7.6h-2.2l-4.2-5.4v5.4H7.2V8.2Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -77,19 +115,19 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="인스타그램 바로가기"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-cyan-400 hover:bg-cyan-50 hover:text-cyan-500"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-pink-500 shadow-sm transition hover:border-pink-400 hover:bg-pink-50"
           >
-            <FaInstagram size={19} />
+            <InstagramIcon />
           </a>
 
           <a
             href={siteConfig.blogUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="블로그 바로가기"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-cyan-400 hover:bg-cyan-50 hover:text-cyan-500"
+            aria-label="네이버 블로그 바로가기"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-green-500 shadow-sm transition hover:border-green-500 hover:bg-green-50"
           >
-            <SiNaver size={19} />
+            <NaverBlogIcon />
           </a>
 
           <Link
@@ -126,9 +164,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-slate-900"
+              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-pink-500"
             >
-              <FaInstagram size={18} />
+              <InstagramIcon />
               인스타
             </a>
 
@@ -137,9 +175,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-slate-900"
+              className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 font-bold text-green-500"
             >
-              <SiNaver size={18} />
+              <NaverBlogIcon />
               블로그
             </a>
 
